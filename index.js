@@ -12,7 +12,9 @@ app.get('/', function (req, res) {
     }
 );
 
-app.listen(8080, function () {
-    console.log('Escuchando en http://localhost:8080')
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, function () {
+    console.log('Escuchando en http://localhost:'+ PORT);
 
 });
