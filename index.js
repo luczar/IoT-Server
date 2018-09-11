@@ -1,10 +1,13 @@
-// Cargamos la libreria express
+// Cargamos la libreria express que nos permite hacer un servidor web
 const express = require('express');
 
 const app = express();
+
+app.use(express.static("public"));
+
 let cont = 0;
 
-app.get('/', function (req, res) {
+app.get('/api/getRandom', function (req, res) {
 
     res.send("#" + Math.round(Math.random()));
     console.log(cont++);
